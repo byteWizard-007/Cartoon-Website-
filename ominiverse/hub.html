@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiverse Hub - All Universes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-portal"></div>
+                MULTIVERSE <span class="title-glow">HUB</span>
+            </a>
+            <ul id="nav-links" class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hub.html" class="active">Universes</a></li>
+                <li><a href="arena.html">Battle Arena</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section style="padding-top: 150px;">
+        <div class="container">
+            <h1 class="title-glow" style="font-size: 4rem; text-align: center; margin-bottom: 1rem;">Explore Universes</h1>
+            <p style="text-align: center; color: #ccc; margin-bottom: 4rem;">Select a portal to enter a new dimension.</p>
+            
+            <div id="hub-grid" class="grid-container">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('hub-grid');
+            if(typeof multiverseData !== 'undefined') {
+                Object.values(multiverseData).forEach(u => {
+                    const card = document.createElement('a');
+                    card.href = `universes/${u.id}.html`;
+                    card.className = 'glass-card fade-up';
+                    card.innerHTML = `
+                        <img src="${u.heroImage}" alt="${u.title}" class="universe-card-img" style="border-bottom: 3px solid ${u.bg}">
+                        <h2 style="color: ${u.bg}">${u.title}</h2>
+                        <p style="color: #bbb; font-size: 0.9rem;">${u.desc}</p>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

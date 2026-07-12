@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Superhero Cartoon Multiverse</title>
+    <meta name="description" content="Explore the ultimate cartoon multiverse featuring Ben 10, Pokemon, and more!">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-portal"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-portal"></div>
+                MULTIVERSE <span class="title-glow">HUB</span>
+            </a>
+            <ul id="nav-links" class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="hub.html">Universes</a></li>
+                <li><a href="arena.html">Battle Arena</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">Search</a>
+                <a href="login.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">Login</a>
+                <div id="hamburger" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hover-target">
+        <img src="C:/Users/shiav/.gemini/antigravity/brain/f100df31-2d85-4d12-bb32-1787ad449cb3/hero_banner_multiverse_1775830232653.png" alt="Multiverse Portal" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content fade-up">
+            <h1>Welcome to the <br><span class="title-glow">Cartoon Multiverse</span></h1>
+            <p>Explore 20+ legendary cartoon universes. Discover characters, immense powers, and witness epic crossover battles in the ultimate hub.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="hub.html" class="btn btn-primary">Enter The Portal</a>
+                <a href="arena.html" class="btn btn-outline">Battle Arena</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Universes (Zig Zag Layout) -->
+    <section id="featured">
+        <div class="container">
+            <h2 class="title-glow" style="text-align: center; font-size: 3rem; margin-bottom: 4rem;">Featured Realms</h2>
+            
+            <!-- Ben 10 Realm -->
+            <div class="zig-zag">
+                <div class="zig-zag-content">
+                    <h2 style="font-size: 2.5rem; color: var(--neon-green);">Ben 10 Universe</h2>
+                    <p style="color: #bbb; font-size: 1.2rem; margin-bottom: 1.5rem;">Wield the power of the Omnitrix. Transform into incredible alien forms and protect the galaxy from intergalactic threats. Discover the lore of Azmuth and the Plumbers.</p>
+                    <a href="universes/ben10.html" class="btn btn-outline" style="border-color: var(--neon-green); box-shadow: none;">Explore Ben 10</a>
+                </div>
+                <div class="zig-zag-image hover-target">
+                    <img src="C:/Users/shiav/.gemini/antigravity/brain/f100df31-2d85-4d12-bb32-1787ad449cb3/ben10_banner_1775830257789.png" alt="Ben 10 Banner">
+                </div>
+            </div>
+
+            <!-- Pokemon Realm -->
+            <div class="zig-zag">
+                <div class="zig-zag-content">
+                    <h2 style="font-size: 2.5rem; color: #FFDE00;">Pokémon Universe</h2>
+                    <p style="color: #bbb; font-size: 1.2rem; margin-bottom: 1.5rem;">Gotta catch 'em all! Journey through vibrant regions, battle gym leaders, and uncover the mysteries of legendary Pokémon controlling time and space.</p>
+                    <a href="universes/pokemon.html" class="btn btn-outline" style="border-color: #FFDE00; box-shadow: none;">Explore Pokémon</a>
+                </div>
+                <div class="zig-zag-image hover-target">
+                    <img src="C:/Users/shiav/.gemini/antigravity/brain/f100df31-2d85-4d12-bb32-1787ad449cb3/pokemon_banner_1775830272532.png" alt="Pokemon Banner">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3 class="title-glow">MULTIVERSE HUB</h3>
+            <div class="social-links">
+                <a href="#">X</a>
+                <a href="#">IG</a>
+                <a href="#">YT</a>
+                <a href="#">DC</a>
+            </div>
+            <p style="color: #666; font-size: 0.9rem;">&copy; 2026 Superhero Cartoon Multiverse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

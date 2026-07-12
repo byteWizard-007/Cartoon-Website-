@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle Arena - Multiverse Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-portal"></div>
+                MULTIVERSE <span class="title-glow">HUB</span>
+            </a>
+            <ul id="nav-links" class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hub.html">Universes</a></li>
+                <li><a href="arena.html" class="active">Battle Arena</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section style="padding-top: 150px; min-height: 100vh;">
+        <div class="container" style="text-align: center;">
+            <h1 class="title-glow" style="font-size: 4rem;">Multiverse Battle Arena</h1>
+            <p style="color: #aaa; margin-bottom: 3rem;">Simulate an epic crossover battle between legends.</p>
+
+            <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; margin-bottom: 3rem;">
+                <!-- Fighter 1 -->
+                <div class="glass-card" style="width: 300px;">
+                    <h3 style="color: var(--neon-blue);">Fighter 1</h3>
+                    <select id="fighter1" style="width: 100%; padding: 10px; margin-top: 1rem; background: var(--bg-dark); color: white; border: 1px solid var(--neon-blue); border-radius: 5px;">
+                        <option value="">Select Fighter</option>
+                    </select>
+                </div>
+
+                <h1 class="title-glow" style="font-size: 5rem; color: var(--neon-red);">VS</h1>
+
+                <!-- Fighter 2 -->
+                <div class="glass-card" style="width: 300px;">
+                    <h3 style="color: var(--neon-purple);">Fighter 2</h3>
+                    <select id="fighter2" style="width: 100%; padding: 10px; margin-top: 1rem; background: var(--bg-dark); color: white; border: 1px solid var(--neon-purple); border-radius: 5px;">
+                        <option value="">Select Fighter</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="battleBtn" class="btn btn-primary" style="font-size: 1.5rem; padding: 15px 50px;">FIGHT!</button>
+
+            <div id="battleResult" style="margin-top: 3rem; font-size: 2rem; display: none;" class="glass-card">
+                <h2 id="winnerText" class="title-glow" style="font-size: 3rem;"></h2>
+                <p id="winnerDesc" style="color: #ccc; font-size: 1.2rem; margin-top: 1rem;"></p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const f1 = document.getElementById('fighter1');
+            const f2 = document.getElementById('fighter2');
+            const btn = document.getElementById('battleBtn');
+            const res = document.getElementById('battleResult');
+            const winTxt = document.getElementById('winnerText');
+            const winDesc = document.getElementById('winnerDesc');
+
+            let allChars = [];
+            Object.values(multiverseData).forEach(u => {
+                u.characters.forEach(c => allChars.push({...c, universe: u.title}));
+            });
+
+            allChars.forEach(c => {
+                const opt1 = new Option(`${c.name} (${c.universe})`, c.name);
+                const opt2 = new Option(`${c.name} (${c.universe})`, c.name);
+                f1.add(opt1); f2.add(opt2);
+            });
+
+            btn.addEventListener('click', () => {
+                if(!f1.value || !f2.value) return alert("Select two fighters!");
+                if(f1.value === f2.value) return alert("Select different fighters!");
+                
+                res.style.display = 'block';
+                winTxt.textContent = "SIMULATING BATTLE...";
+                winDesc.textContent = "";
+                
+                const c1 = allChars.find(x => x.name === f1.value);
+                const c2 = allChars.find(x => x.name === f2.value);
+
+                setTimeout(() => {
+                    const power1 = c1.powers + c1.speed + Math.random()*20;
+                    const power2 = c2.powers + c2.speed + Math.random()*20;
+                    const winner = power1 > power2 ? c1 : c2;
+                    const loser = power1 > power2 ? c2 : c1;
+
+                    winTxt.textContent = `${winner.name} WINS!`;
+                    winDesc.textContent = `Using extreme speed and power, ${winner.name} exploited ${loser.name}'s weakness (${loser.weak}) to claim victory in the multiverse arena!`;
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

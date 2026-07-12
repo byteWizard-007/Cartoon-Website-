@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe - Multiverse Hub</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav id="navbar" class="navbar scrolled">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-portal"></div>
+                MULTIVERSE <span class="title-glow">HUB</span>
+            </a>
+            <ul id="nav-links" class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../hub.html">Universes</a></li>
+                <li><a href="../arena.html">Battle Arena</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero hover-target" style="min-height: 60vh;">
+        <img id="universe-hero-bg" src="" alt="Banner" class="hero-bg" style="filter: blur(0px); opacity:0.8;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content fade-up" style="padding-top: 100px;">
+            <h1 id="universe-title" style="font-size: 6rem; text-transform: uppercase; letter-spacing: 5px;"></h1>
+            <p id="universe-desc" style="font-size: 1.5rem; color: #eee; text-shadow: 0 4px 10px rgba(0,0,0,0.8);"></p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="title-glow" style="margin-bottom: 2rem; font-size: 3rem; text-align: center;">Main Characters</h2>
+            <div id="universe-characters" class="grid-container"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="color: #666;">&copy; 2026 Superhero Cartoon Multiverse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/universe.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
